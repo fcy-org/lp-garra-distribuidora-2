@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/webhooks/leads/cmpy5fztd000348rojo6xn9f5",
+      "destination": "https://newtracking-sales-sys.vercel.app/api/webhooks/leads/cmpy5fztd000348rojo6xn9f5"
+    }
+  ]
+}

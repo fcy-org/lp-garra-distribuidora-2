@@ -1,0 +1,530 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Garra Distribuidora | Escalação Campeã Dori</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#001e2b",
+                        "outline": "#70787e",
+                        "surface-dim": "#d7dbda",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary-container": "#91d4f7",
+                        "on-tertiary-container": "#8ddf87",
+                        "surface-container": "#ebeeed",
+                        "tertiary-fixed": "#a3f69c",
+                        "tertiary": "#004a0f",
+                        "outline-variant": "#bfc8ce",
+                        "inverse-surface": "#2d3131",
+                        "on-surface": "#181c1c",
+                        "primary-container": "#005d7b",
+                        "on-secondary-fixed-variant": "#584400",
+                        "on-tertiary-fixed": "#002204",
+                        "surface-container-high": "#e6e9e8",
+                        "primary": "#00445b",
+                        "on-tertiary-fixed-variant": "#005312",
+                        "primary-fixed-dim": "#8ccff2",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#c0e8ff",
+                        "surface-container-low": "#f1f4f3",
+                        "secondary-fixed-dim": "#f1c100",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#6e5700",
+                        "on-background": "#181c1c",
+                        "surface": "#f7faf9",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#0f641c",
+                        "secondary-container": "#fecb00",
+                        "inverse-on-surface": "#eef1f0",
+                        "on-primary-fixed-variant": "#004d66",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#88d982",
+                        "secondary": "#745b00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#40484d",
+                        "surface-bright": "#f7faf9",
+                        "surface-container-highest": "#e0e3e2",
+                        "inverse-primary": "#8ccff2",
+                        "background": "#f7faf9",
+                        "surface-variant": "#e0e3e2",
+                        "secondary-fixed": "#ffe08b",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#156684"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "64px",
+                        "base": "8px",
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "stack-sm": "16px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Work Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
+        .stadium-gradient {
+            background: radial-gradient(circle at 50% -20%, #005d7b 0%, #00445b 100%);
+            position: relative;
+        }
+        .stadium-gradient::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.2;
+        }
+        .grass-divider {
+            height: 8px;
+            background: repeating-linear-gradient(90deg, #0f641c, #0f641c 40px, #004a0f 40px, #004a0f 80px);
+        }
+        .ticket-edge {
+            position: relative;
+            border: 2px solid #bfc8ce;
+        }
+        .ticket-edge::before, .ticket-edge::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #f7faf9;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 2px solid #bfc8ce;
+        }
+        .ticket-edge::before { left: -12px; border-right: none; }
+        .ticket-edge::after { right: -12px; border-left: none; }
+        
+        .shadow-premium { box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.08); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+        }
+        .soccer-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 10v20L30 40 15 30V10z' fill-opacity='0.03' fill='%23000'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background soccer-pattern">
+<!-- Navigation -->
+<nav class="flex justify-between items-center w-full px-6 md:px-10 h-20 fixed top-0 z-50 bg-primary/95 backdrop-blur-md border-b border-primary-container shadow-lg">
+<div class="text-2xl font-headline font-bold text-on-primary">Garra <span class="text-secondary-container">Distribuidora</span></div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-sm font-semibold text-white/80 hover:text-white transition-colors" href="#oportunidade">Oportunidade</a>
+<a class="text-sm font-semibold text-white/80 hover:text-white transition-colors" href="#produtos">Produtos</a>
+<a class="text-sm font-semibold text-white/80 hover:text-white transition-colors" href="#beneficios">Benefícios</a>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2.5 rounded-full font-bold hover:bg-secondary-fixed transition-all active:scale-95 shadow-lg">Receber Catálogo</button>
+</div>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-6 md:px-10 stadium-gradient overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
+<div class="absolute top-0 left-1/4 w-[1px] h-full bg-white/10"></div>
+<div class="absolute top-0 right-1/4 w-[1px] h-full bg-white/10"></div>
+<div class="absolute top-0 left-1/2 w-96 h-96 bg-primary-fixed-dim/20 blur-[120px] -translate-x-1/2"></div>
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center">
+<svg class="w-full h-full max-w-4xl" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+<rect fill="none" height="50" stroke="white" stroke-width="0.5" width="90" x="5" y="5"></rect>
+<line stroke="white" stroke-width="0.5" x1="50" x2="50" y1="5" y2="55"></line>
+<circle cx="50" cy="30" fill="none" r="8" stroke="white" stroke-width="0.5"></circle>
+<rect fill="none" height="30" stroke="white" stroke-width="0.5" width="12" x="5" y="15"></rect>
+<rect fill="none" height="30" stroke="white" stroke-width="0.5" width="12" x="83" y="15"></rect>
+</svg>
+</div></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+<!-- Hero Content -->
+<div class="space-y-8 text-on-primary">
+<div class="inline-flex items-center gap-3 bg-secondary-container text-on-secondary-container px-5 py-2 rounded-full shadow-xl border border-white/20">
+<span class="material-symbols-outlined text-[20px] animate-bounce">sports_soccer</span>
+<span class="font-bold text-xs uppercase tracking-widest">ESCALAÇÃO CAMPEÃ DA COPA 2024</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-headline leading-[1.1] tracking-tight">
+                Prepare seu mercado para a Copa com produtos <span class="text-secondary-container underline decoration-wavy decoration-2 underline-offset-8">Dori</span> de alto giro
+            </h1>
+<p class="text-lg text-primary-fixed-dim max-w-xl font-medium leading-relaxed">
+                Receba catálogo completo, condições comerciais exclusivas para o Piauí e atendimento especializado da Garra Distribuidora para abastecer seu checkout.
+            </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="flex flex-col items-center p-4 bg-white/10 rounded-2xl border border-white/10 backdrop-blur-sm group hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined mb-3 text-secondary-container group-hover:scale-110 transition-transform">workspace_premium</span>
+<span class="font-bold text-[11px] text-center uppercase tracking-tighter">Mix Campeão</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-white/10 rounded-2xl border border-white/10 backdrop-blur-sm group hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined mb-3 text-secondary-container group-hover:scale-110 transition-transform">stadium</span>
+<span class="font-bold text-[11px] text-center uppercase tracking-tighter">Estoque Full</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-white/10 rounded-2xl border border-white/10 backdrop-blur-sm group hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined mb-3 text-secondary-container group-hover:scale-110 transition-transform">local_shipping</span>
+<span class="font-bold text-[11px] text-center uppercase tracking-tighter">Logística Fast</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-white/10 rounded-2xl border border-white/10 backdrop-blur-sm group hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined mb-3 text-secondary-container group-hover:scale-110 transition-transform">partner_exchange</span>
+<span class="font-bold text-[11px] text-center uppercase tracking-tighter">Parceria B2B</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-5 pt-4">
+<a class="bg-surface text-primary px-10 py-5 rounded-full font-bold text-base shadow-2xl flex items-center justify-center gap-3 hover:bg-primary-fixed transition-all group" href="#contato">
+                    ABRIR CONTA E PEDIR CATÁLOGO
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+<p class="text-sm font-medium opacity-70 flex items-center gap-2">
+<span class="w-2 h-2 bg-tertiary-fixed rounded-full animate-pulse"></span> 
+                Atendimento exclusivo para CNPJ no Piauí
+            </p>
+</div>
+<!-- Hero Form -->
+<div class="glass-card p-8 rounded-[2rem] shadow-2xl border border-white/30" id="contato">
+<div class="mb-8 text-center">
+<h2 class="text-3xl font-headline text-primary mb-2">Entrar em Campo</h2>
+<p class="text-on-surface-variant font-medium">Preencha os dados para receber nossas condições.</p>
+</div>
+<form class="space-y-5">
+<div>
+<label class="block font-bold text-sm mb-2 text-on-surface">Nome do Responsável</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Seu nome" type="text">
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><div class="md:col-span-2"> <label class="block font-bold text-sm mb-2 text-on-surface">E-mail</label> <input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="seu@email.com" type="email"> </div>
+<div>
+<label class="block font-bold text-sm mb-2 text-on-surface">WhatsApp</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="(86) 00000-0000" type="tel">
+</div>
+<div>
+<label class="block font-bold text-sm mb-2 text-on-surface">Cidade</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Cidade no PI" type="text">
+</div>
+</div>
+<div> <label class="block font-bold text-sm mb-2 text-on-surface">CNPJ</label> <input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="00.000.000/0000-00" type="text"> </div><div>
+<label class="block font-bold text-sm mb-2 text-on-surface">Nome do Estabelecimento</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Ex: Supermercado Central" type="text">
+</div>
+<button class="w-full bg-tertiary text-white py-5 rounded-xl font-bold text-lg shadow-xl flex items-center justify-center gap-3 hover:brightness-110 active:scale-[0.98] transition-all" type="submit">
+                    SOLICITAR ACESSO AGORA
+                    <span class="material-symbols-outlined">send</span>
+</button>
+<p class="text-center text-[11px] text-on-surface-variant italic font-medium">Análise rápida em até 24h úteis.</p>
+</form>
+</div>
+</div>
+</section>
+<div class="grass-divider"></div>
+<!-- Opportunity Section -->
+<section class="py-24 px-6 md:px-10 bg-white relative transition-all duration-1000 opacity-100 translate-y-0" id="oportunidade"><div class="absolute inset-0 opacity-[0.02] pointer-events-none overflow-hidden">
+<svg class="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="100" id="sports-pattern" patternUnits="userSpaceOnUse" width="100" x="0" y="0">
+<circle cx="20" cy="20" fill="black" r="5"></circle>
+<path d="M60 10 L90 10 L90 40 L60 40 Z" fill="none" stroke="black" stroke-dasharray="2,2" stroke-width="1"></path>
+<circle cx="75" cy="75" fill="none" r="8" stroke="black" stroke-width="1"></circle>
+</pattern>
+</defs>
+<rect fill="url(#sports-pattern)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto text-center mb-16">
+<div class="inline-block px-4 py-1 bg-tertiary-fixed text-tertiary font-bold text-xs rounded-full mb-4 uppercase tracking-widest">Análise de Mercado</div>
+<h2 class="text-4xl md:text-5xl font-headline text-primary mb-6">A Copa pode aumentar o giro do seu mercado. <br class="hidden md:block">Seu estoque está pronto?</h2>
+<div class="w-32 h-1.5 bg-secondary-container mx-auto rounded-full"></div>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="p-8 rounded-3xl bg-surface border border-outline-variant/30 shadow-premium flex flex-col items-center text-center transition-all hover:-translate-y-3 hover:shadow-2xl">
+<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-8 shadow-inner">
+<span class="material-symbols-outlined text-[36px]">trending_up</span>
+</div>
+<h3 class="text-xl font-bold text-on-background mb-4">Saída nos Dias de Jogo</h3>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">Produtos de consumo rápido ganham força total quando a torcida se reúne.</p>
+</div>
+<div class="p-8 rounded-3xl bg-surface border border-outline-variant/30 shadow-premium flex flex-col items-center text-center transition-all hover:-translate-y-3 hover:shadow-2xl">
+<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-8 shadow-inner">
+<span class="material-symbols-outlined text-[36px]">point_of_sale</span>
+</div>
+<h3 class="text-xl font-bold text-on-background mb-4">Checkout Lucrativo</h3>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">Itens Dori no caixa aumentam o ticket médio por impulso durante as compras.</p>
+</div>
+<div class="p-8 rounded-3xl bg-surface border border-outline-variant/30 shadow-premium flex flex-col items-center text-center transition-all hover:-translate-y-3 hover:shadow-2xl">
+<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-8 shadow-inner">
+<span class="material-symbols-outlined text-[36px]">inventory</span>
+</div>
+<h3 class="text-xl font-bold text-on-background mb-4">Zero Ruptura</h3>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">Antecipe-se e garanta que não falte produto nos momentos de pico da demanda.</p>
+</div>
+<div class="p-8 rounded-3xl bg-surface border border-outline-variant/30 shadow-premium flex flex-col items-center text-center transition-all hover:-translate-y-3 hover:shadow-2xl">
+<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-8 shadow-inner">
+<span class="material-symbols-outlined text-[36px]">strategy</span>
+</div>
+<h3 class="text-xl font-bold text-on-background mb-4">Mix Estratégico</h3>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">Nossa equipe sugere o pedido ideal conforme o perfil do seu bairro.</p>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-24 px-6 md:px-10 bg-surface-container-low transition-all duration-1000 opacity-100 translate-y-0" id="beneficios">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-10">
+<h2 class="text-4xl md:text-5xl font-headline text-primary leading-tight">O que você recebe ao entrar no time Garra</h2>
+<div class="space-y-6">
+<div class="flex items-start gap-5 p-4 rounded-2xl hover:bg-white transition-colors cursor-default">
+<span class="material-symbols-outlined text-tertiary bg-tertiary-fixed p-2 rounded-lg font-bold">verified</span>
+<div>
+<p class="font-bold text-lg text-on-background">Catálogo Completo Dori</p>
+<p class="text-on-surface-variant font-medium">Acesso imediato a todos os SKUs de sucesso nacional.</p>
+</div>
+</div>
+<div class="flex items-start gap-5 p-4 rounded-2xl hover:bg-white transition-colors cursor-default">
+<span class="material-symbols-outlined text-tertiary bg-tertiary-fixed p-2 rounded-lg font-bold">payments</span>
+<div>
+<p class="font-bold text-lg text-on-background">Preços Diretos de Distribuidor</p>
+<p class="text-on-surface-variant font-medium">Margens competitivas para revenda em larga escala.</p>
+</div>
+</div>
+<div class="flex items-start gap-5 p-4 rounded-2xl hover:bg-white transition-colors cursor-default">
+<span class="material-symbols-outlined text-tertiary bg-tertiary-fixed p-2 rounded-lg font-bold">person_pin</span>
+<div>
+<p class="font-bold text-lg text-on-background">Consultoria Dedicada</p>
+<p class="text-on-surface-variant font-medium">Um especialista via WhatsApp para otimizar suas vendas.</p>
+</div>
+</div>
+<div class="flex items-start gap-5 p-4 rounded-2xl hover:bg-white transition-colors cursor-default">
+<span class="material-symbols-outlined text-tertiary bg-tertiary-fixed p-2 rounded-lg font-bold">local_shipping</span>
+<div>
+<p class="font-bold text-lg text-on-background">Entrega Rápida no Piauí</p>
+<p class="text-on-surface-variant font-medium">Frota própria e logística ágil para reposição imediata.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-6 bg-tertiary/10 rounded-[3rem] blur-3xl group-hover:bg-tertiary/20 transition-all"></div>
+<div class="bg-white p-6 rounded-[2.5rem] shadow-2xl border border-outline-variant/20 relative">
+<img alt="Consultor Garra" class="w-full h-[450px] object-cover rounded-[1.5rem] mb-8 shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDViDYyocZrPf9-pQ1coQoT4neU7YtUm9b2MT0UrOHGNj4nA4e1fvRzlIFt6pwspVqOzKiWb0Hc66rcPGiMtSidcTniGY0eNRuz8CHIrRFSCB8joe7olR0dEVrk_br3d4XsncHURl6FZ-UjeorwrA0Xqgs8B9s6UeDMQzMi5Xi_y2kE0DtoXkZqFzJgcmaRYAWshoA6wUZu_Ni1fVoXKL9cuCb3ZBr96US3qFGHq3_507bS0ZxGWjL0qYiGbFia4vMsC9SgN75SH2N9">
+<div class="bg-primary p-6 rounded-2xl text-on-primary shadow-lg">
+<p class="text-base italic font-medium mb-3">"Garantimos que seu estoque seja uma escalação campeã, focando nos produtos de maior saída para essa temporada de Copa."</p>
+<p class="font-bold text-secondary-container">— Gerência Comercial Garra</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Products Section -->
+<section class="py-24 px-6 md:px-10 bg-white overflow-hidden transition-all duration-1000 opacity-100 translate-y-0" id="produtos"><div class="absolute inset-0 opacity-[0.02] pointer-events-none overflow-hidden">
+<svg class="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<rect fill="url(#sports-pattern)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-headline text-primary mb-4">Goleada de Variedade Dori</h2>
+<p class="text-lg text-on-surface-variant font-medium max-w-2xl mx-auto">Categorias selecionadas para transformar seu PDV em um campo de vendas.</p>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+<!-- Category Card -->
+<div class="group flex flex-col items-center">
+<div class="ticket-edge w-full aspect-[4/5] bg-[#FFE4E1]/30 rounded-xl p-4 mb-4 transition-all group-hover:scale-105 group-hover:-rotate-1 group-hover:shadow-xl flex flex-col items-center justify-center">
+<img alt="Gomas" class="w-full h-3/4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyJNcE7Pp5GhAjQId-CRkOv-ic3KoM-BmQ593wihAtGg0gLjNkKmrZdbpqs11SP-bzH5pG9HvY_gzW0t0GkuaNH6YkJoEZ-8QlzvLml1v3w3gqVU3QQdPtGurVSK1DTwdE14iN0c4D0R4-_Kr0PuL0q4QcgnMN3OqZ0jxtD26MdsWhHILt_AVOlY5OaYSlcCqP7kZW1U-X9XRZsH0k9G33BqGGDzG3GDmpHXAqhO7V_HXnla95HExLTxrx470qnSU6zfKWNWTVFVye">
+</div>
+<span class="font-bold text-sm text-on-background group-hover:text-primary transition-colors">Gomas e Jujubas</span>
+</div>
+<div class="group flex flex-col items-center">
+<div class="ticket-edge w-full aspect-[4/5] bg-[#E0F7FA]/30 rounded-xl p-4 mb-4 transition-all group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-xl flex flex-col items-center justify-center">
+<img alt="Pirulitos" class="w-full h-3/4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWCe4kvYZ2cNCSo2KMjOerTDnHXlXRXWb_Rs_DRnhRpn_XXHqR_kYv7Ore_0Bmo4poy0kmnW3svdTt9pLEcXteXaBzaaKNDfnNVYJYdbG1r8Kk0XyukNaG6A2KOH47wwh6Ejzp2QVeJO_wt0XsAVlquAeOyFYdEey8wWoyZflF5JCTppPfmyuGtK-4omAHQI_3ANLoAZI4R_iwFdXugGQIxxCI_DBHcnrEMtf3j7XSZmxwNq4n6yNichPKoK3iNWiWFFhpjcpO6VEw">
+</div>
+<span class="font-bold text-sm text-on-background group-hover:text-primary transition-colors">Pirulitos</span>
+</div>
+<div class="group flex flex-col items-center">
+<div class="ticket-edge w-full aspect-[4/5] bg-[#F3E5F5]/30 rounded-xl p-4 mb-4 transition-all group-hover:scale-105 group-hover:-rotate-1 group-hover:shadow-xl flex flex-col items-center justify-center">
+<img alt="Chocolates" class="w-full h-3/4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGnsSubm-DV-ejOPZvS1dKAUqSXkpNIMUudWK3wdSaUn-5LR9PpoG8WCX6as71labWjpCDnlcDi6GUaFyCNXvmWy4O8Mm54R-UHJAH1_PApGhOZMVyYa14BYgtQAQKpXVNCKwZiW0W5Uj41erQycCIV7fSQbPInzpIqbp2JxXx1eh1ZJIjGZm5a3UZrNI9_K1knhX7psdWSVAx94ED056wDemOqQMarPlzqYmYHxzZOXJNsp9lKuhkm8gOxVGe28xbaa6Z5OMsMKgh">
+</div>
+<span class="font-bold text-sm text-on-background group-hover:text-primary transition-colors">Chocolates</span>
+</div>
+<div class="group flex flex-col items-center">
+<div class="ticket-edge w-full aspect-[4/5] bg-[#FFF3E0]/30 rounded-xl p-4 mb-4 transition-all group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-xl flex flex-col items-center justify-center">
+<img alt="Amendoins" class="w-full h-3/4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQmzHurcemp-emT9Tb4UWMhK6GVe3vgk0tj_oOfmLvdCnSiGz8qXNve_F8miPLrUPhlnx-YXUGlAKkRd6nPbIQmgEhXG550OnVw47Hi0rfhImuhFw9V23rdTBdoq_wvzXXIwzqtMN9-XkPjq1cc3Glj3pd8n4lrR0KQNiXTkMVVjzgaz6T6enyErbq5YlCM4V5xXTpV3p2AU2u2_UDG9c4sMcdI4CvpYpwiPRNci-_TbqmiRMXkVznRgL-0TSW5-jgu3hQbTNdJxz_">
+</div>
+<span class="font-bold text-sm text-on-background group-hover:text-primary transition-colors">Amendoins</span>
+</div>
+<div class="group flex flex-col items-center">
+<div class="ticket-edge w-full aspect-[4/5] bg-[#E8F5E9]/30 rounded-xl p-4 mb-4 transition-all group-hover:scale-105 group-hover:-rotate-1 group-hover:shadow-xl flex flex-col items-center justify-center">
+<img alt="Balas" class="w-full h-3/4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCePghyvKsl-0vPaAh1fgZc1gX1hcjrpy1QczVSrX2nb1Iucv_4mJyC5CUvxyWgnd2-0nLZ-TzH6ET1uarYxj6G42NreVitz3rdZxyDyu07xv6SAcQMsQwP86hEEVfdP5_h7lT8SUPZGmMFNLrnzhFRabTdCYWYpiIFQYphJArXxMhbCJuSdly6_HtzbViCE86Ld89IHs0zcdScmRgBN7PNICzYONodTrTsPlIeWspuge1wlOYwaAF2QwQYhBw5BY-s0Lwc1kf7SYNn">
+</div>
+<span class="font-bold text-sm text-on-background group-hover:text-primary transition-colors">Balas Mastigáveis</span>
+</div>
+<div class="group flex flex-col items-center">
+<div class="ticket-edge w-full aspect-[4/5] bg-[#E3F2FD]/30 rounded-xl p-4 mb-4 transition-all group-hover:scale-105 group-hover:rotate-1 group-hover:shadow-xl flex flex-col items-center justify-center">
+<img alt="Infantil" class="w-full h-3/4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFmj2Wm8wOHUE1WI91nW1-cDCaNltj-ZrJ01HdwFdsYz14BZQBlR1ObC-qqkPRrhfzxagwsgANa0c_pD4I3mY_IuLAJPq3OotdRqRfO7CHB9DHdMZMjmLiSbyu1XF9p9AvUvg18LNCS_H_6UHLxRgUd9ygLdMYCd3uati7JyFnMzAzbY982u7yx7MqwFJ4kRtCk83pcyNUgiZRNb1UttsgrR2pHTCv1xLOvXtj0RRwaiyj5XOCGmTRphqBhQ46Clkea0ulDD77y-UT">
+</div>
+<span class="font-bold text-sm text-on-background group-hover:text-primary transition-colors">Linha Infantil</span>
+</div>
+<div class="group flex flex-col items-center">
+<div class="ticket-edge w-full aspect-[4/5] bg-[#FAFAFA]/30 rounded-xl p-4 mb-4 transition-all group-hover:scale-105 group-hover:-rotate-1 group-hover:shadow-xl flex flex-col items-center justify-center">
+<img alt="Mix" class="w-full h-3/4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCMrFmjG_FzJ4IEKT7GFaoz5gj4tXvFLcIqr3rmJrVWmjVp7ouZ3Jinhe2A0M7llYnW3kd_bUTKXAuO77Rv_i6Exd6PztSeCbPvOXvTztZMjfkG4gfIIhMte4KFxkiZ2Qjtn_iDbvS0FaqYbtGz9YaxxJB9wc2ykOCpt3CwvK24EMOeldmNh1xQDMatcCynEX2GPkh16gYBpetP-ACmYpt5rRnX1d7c06y5v8w11echKZ47hpJbu7VrlJYDH8i_GWCpkoplECPUHxF">
+</div>
+<span class="font-bold text-sm text-on-background group-hover:text-primary transition-colors">Mix Checkout</span>
+</div>
+</div>
+</section>
+<!-- Commercial Offer -->
+<section class="py-24 px-6 md:px-10 bg-primary text-on-primary transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-headline text-center mb-16 leading-tight">Comprar da Garra é jogo ganho <br class="hidden md:block">para empresas no Piauí</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 shadow-2xl group hover:bg-white transition-all duration-500">
+<span class="material-symbols-outlined text-secondary-container text-[48px] mb-6 block group-hover:scale-110 transition-transform">payments</span>
+<h3 class="text-2xl font-bold mb-4 group-hover:text-primary">Mínimo Acessível</h3>
+<p class="text-sm font-medium text-white/70 group-hover:text-on-surface-variant">Pedidos a partir de R$ 200. Perfeito para abastecer sem pesar no caixa.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 shadow-2xl group hover:bg-white transition-all duration-500">
+<span class="material-symbols-outlined text-secondary-container text-[48px] mb-6 block group-hover:scale-110 transition-transform">local_shipping</span>
+<h3 class="text-2xl font-bold mb-4 group-hover:text-primary">Logística Pro</h3>
+<p class="text-sm font-medium text-white/70 group-hover:text-on-surface-variant">Frete grátis conforme sua região e frequência de pedidos.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 shadow-2xl group hover:bg-white transition-all duration-500">
+<span class="material-symbols-outlined text-secondary-container text-[48px] mb-6 block group-hover:scale-110 transition-transform">forum</span>
+<h3 class="text-2xl font-bold mb-4 group-hover:text-primary">Fale no Zap</h3>
+<p class="text-sm font-medium text-white/70 group-hover:text-on-surface-variant">Atendimento direto. Tire dúvidas e faça pedidos em segundos.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 shadow-2xl group hover:bg-white transition-all duration-500">
+<span class="material-symbols-outlined text-secondary-container text-[48px] mb-6 block group-hover:scale-110 transition-transform">domain</span>
+<h3 class="text-2xl font-bold mb-4 group-hover:text-primary">Foco B2B</h3>
+<p class="text-sm font-medium text-white/70 group-hover:text-on-surface-variant">Soluções exclusivas para o varejo alimentício do estado.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Urgency Section -->
+<section class="py-20 px-6 md:px-10 bg-error text-on-error relative overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
+<div class="absolute -right-20 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[400px] font-variation-settings: 'FILL' 1;">sports_soccer</span>
+</div>
+<div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="text-center md:text-left space-y-6">
+<div class="inline-flex items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+<span class="w-2 h-2 bg-secondary-container rounded-full animate-ping"></span>
+                Início do Campeonato se Aproxima
+            </div>
+<h2 class="text-4xl md:text-5xl font-headline leading-tight">A Copa não espera seu <br>estoque se preparar</h2>
+<ul class="space-y-3 font-medium">
+<li class="flex items-center gap-3 justify-center md:justify-start">
+<span class="material-symbols-outlined text-secondary-container">alarm</span>
+<span class="">Prazo de entrega para o interior: 48h a 72h</span>
+</li>
+<li class="flex items-center gap-3 justify-center md:justify-start">
+<span class="material-symbols-outlined text-secondary-container">trending_up</span>
+<span class="">Aumento de 40% na procura por snacks em dias de jogo</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-col items-center gap-4">
+<a class="bg-secondary-container text-on-secondary-container px-12 py-6 rounded-full font-bold text-xl shadow-2xl hover:bg-secondary-fixed transition-all flex items-center gap-4 active:scale-95 group" href="#contato">
+                EU QUERO O CATÁLOGO AGORA
+                <span class="material-symbols-outlined group-hover:rotate-45 transition-transform">bolt</span>
+</a>
+<p class="text-xs font-bold opacity-80 uppercase tracking-tighter">Oferta válida para novos parceiros no PI</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<div class="h-20 bg-gradient-to-t from-inverse-surface to-transparent relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-12 opacity-10 flex items-end justify-around gap-1">
+<div class="w-4 h-8 bg-white rounded-t-full"></div>
+<div class="w-4 h-10 bg-white rounded-t-full"></div>
+<div class="w-4 h-6 bg-white rounded-t-full"></div>
+<div class="w-4 h-12 bg-white rounded-t-full"></div>
+<div class="w-4 h-9 bg-white rounded-t-full"></div>
+<div class="w-4 h-11 bg-white rounded-t-full"></div>
+<div class="w-4 h-7 bg-white rounded-t-full"></div>
+<div class="w-4 h-10 bg-white rounded-t-full"></div>
+<div class="w-4 h-8 bg-white rounded-t-full"></div>
+<div class="w-4 h-12 bg-white rounded-t-full"></div>
+<div class="w-4 h-6 bg-white rounded-t-full"></div>
+<div class="w-4 h-11 bg-white rounded-t-full"></div>
+</div>
+</div><footer class="bg-inverse-surface py-20 px-6 md:px-10 text-surface-variant soccer-pattern">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-16">
+<div class="col-span-1 md:col-span-2">
+<div class="text-3xl font-headline font-bold text-primary-fixed mb-6">Garra Distribuidora</div>
+<p class="text-base font-medium max-w-md leading-relaxed opacity-80">
+                Há mais de uma década conectando as melhores marcas ao varejo do Piauí. Especialistas em distribuição inteligente e rentabilidade para o seu negócio.
+            </p>
+</div>
+<div>
+<h4 class="font-bold text-inverse-on-surface mb-6 uppercase tracking-wider text-sm">Institucional</h4>
+<ul class="space-y-4 text-sm font-medium">
+<li class=""><a class="hover:text-primary-fixed transition-colors" href="#">Termos de Parceria</a></li>
+<li class=""><a class="hover:text-primary-fixed transition-colors" href="#">Privacidade de Dados</a></li>
+<li class=""><a class="hover:text-primary-fixed transition-colors" href="#">Seja um Representante</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-inverse-on-surface mb-6 uppercase tracking-wider text-sm">Central de Vendas</h4>
+<ul class="space-y-4 text-sm font-medium">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">call</span>
+<span class="">(86) 3000-0000</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">location_on</span>
+<span class="">Teresina, Piauí - Brasil</span>
+</li>
+<li class="pt-4">
+<div class="bg-primary/20 p-4 rounded-xl border border-primary/30">
+<p class="text-xs font-bold text-primary-fixed leading-tight">Distribuição certificada Dori para todo o estado.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest opacity-50">
+<p class="">© 2024 Garra Distribuidora Ltda.</p>
+<div class="flex gap-8">
+<span class="">Orgulho de ser Piauiense</span>
+<span class="">CNPJ: 00.000.000/0001-00</span>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-12');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-12');
+            observer.observe(section);
+        });
+    });
+</script>
+
+
+</body></html>

@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+/* ===== Design Tokens (Tailwind v4 CSS theme) ===== */
+@theme {
+  /* ---- Colors: Material Design tokens from Stitch ---- */
+  --color-primary: #00445b;
+  --color-primary-container: #005d7b;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #91d4f7;
+  --color-primary-fixed: #c0e8ff;
+  --color-primary-fixed-dim: #8ccff2;
+  --color-on-primary-fixed: #001e2b;
+  --color-on-primary-fixed-variant: #004d66;
+  --color-inverse-primary: #8ccff2;
+
+  --color-secondary: #745b00;
+  --color-secondary-container: #fecb00;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #6e5700;
+  --color-secondary-fixed: #ffe08b;
+  --color-secondary-fixed-dim: #f1c100;
+  --color-on-secondary-fixed: #241a00;
+  --color-on-secondary-fixed-variant: #584400;
+
+  --color-tertiary: #004a0f;
+  --color-tertiary-container: #0f641c;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #8ddf87;
+  --color-tertiary-fixed: #a3f69c;
+  --color-tertiary-fixed-dim: #88d982;
+  --color-on-tertiary-fixed: #002204;
+  --color-on-tertiary-fixed-variant: #005312;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  --color-surface: #f7faf9;
+  --color-surface-dim: #d7dbda;
+  --color-surface-bright: #f7faf9;
+  --color-surface-container: #ebeeed;
+  --color-surface-container-low: #f1f4f3;
+  --color-surface-container-high: #e6e9e8;
+  --color-surface-container-highest: #e0e3e2;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-variant: #e0e3e2;
+  --color-on-surface: #181c1c;
+  --color-on-surface-variant: #40484d;
+  --color-surface-tint: #156684;
+
+  --color-background: #f7faf9;
+  --color-on-background: #181c1c;
+  --color-inverse-surface: #2d3131;
+  --color-inverse-on-surface: #eef1f0;
+  --color-outline: #70787e;
+  --color-outline-variant: #bfc8ce;
+
+  /* ---- Font families ---- */
+  --font-headline: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+
+  /* ---- Border radius ---- */
+  --radius-DEFAULT: 0.5rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+
+  /* ---- Spacing tokens ---- */
+  --spacing-section-gap: 64px;
+  --spacing-base: 8px;
+  --spacing-container-margin: 24px;
+  --spacing-gutter: 16px;
+  --spacing-stack-lg: 64px;
+  --spacing-stack-md: 32px;
+  --spacing-stack-sm: 16px;
+}
+
+/* ===== Base styles ===== */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+  color: var(--color-on-background);
+}
+
+h1, h2, h3, .font-headline {
+  font-family: var(--font-headline);
+  font-weight: 800;
+}
+
+/* ===== Custom utility classes ===== */
+
+/* Stadium gradient background for hero */
+.stadium-gradient {
+  background: radial-gradient(circle at 50% -20%, var(--color-primary-container) 0%, var(--color-primary) 100%);
+  position: relative;
+}
+.stadium-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.2;
+}
+
+/* Grass divider stripe */
+.grass-divider {
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-tertiary-container),
+    var(--color-tertiary-container) 40px,
+    var(--color-tertiary) 40px,
+    var(--color-tertiary) 80px
+  );
+}
+
+/* Ticket-edge card effect */
+.ticket-edge {
+  position: relative;
+  border: 2px solid var(--color-outline-variant);
+}
+.ticket-edge::before,
+.ticket-edge::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--color-surface);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid var(--color-outline-variant);
+}
+.ticket-edge::before { left: -12px; border-right: none; }
+.ticket-edge::after { right: -12px; border-left: none; }
+
+/* Premium shadow */
+.shadow-premium {
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+}
+
+/* Soccer field background pattern */
+.soccer-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 10v20L30 40 15 30V10z' fill-opacity='0.03' fill='%23000'/%3E%3C/svg%3E");
+}
+
+/* Scroll-smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: all 1s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
