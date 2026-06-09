@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { siteConfig, navLinks } from '../data/mockData';
+import { navLinks } from '../data/mockData';
 import logoGarra from '../images/Logo garra (sem fundo).png';
 
 interface NavbarProps {
