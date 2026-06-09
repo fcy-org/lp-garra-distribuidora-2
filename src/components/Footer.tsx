@@ -74,7 +74,7 @@ export const Footer: React.FC<Readonly<FooterProps>> = ({ className = '' }) => {
           <p>© 2026 Garra Distribuidora Ltda.</p>
           <div className="flex gap-8">
             <span>Orgulho de ser Piauiense</span>
-            <span>CNPJ: {siteConfig.cnpj}</span>
+            <span>CNPJ: 03.187.161/0001-24</span>
           </div>
         </div>
       </footer>

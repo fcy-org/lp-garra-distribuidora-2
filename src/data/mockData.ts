@@ -6,11 +6,11 @@ export const siteConfig = {
   brandName: 'Garra',
   brandSuffix: 'Distribuidora',
   tagline: 'Escalação Campeã Dori',
-  phone: '(86) 3000-0000',
+  phone: '+55 86 9987-0988',
   location: 'Teresina, Piauí - Brasil',
   cnpj: '00.000.000/0001-00',
   year: 2024,
-  whatsappNumber: '5586900000000',
+  whatsappNumber: '558699870988',
 };
 
 export const navLinks = [
