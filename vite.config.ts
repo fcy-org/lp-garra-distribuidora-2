@@ -14,4 +14,7 @@ export default defineConfig({
       },
     },
   },
+  preview: {
+    allowedHosts: ['fonil-lp-garra-distribuidora-2.hqzrjv.easypanel.host'],
+  },
 })
